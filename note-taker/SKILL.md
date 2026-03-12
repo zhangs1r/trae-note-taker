@@ -53,6 +53,11 @@ This skill triggers when the user asks to record the current conversation or "ab
     - Run: `python "scripts/save_note.py" --file "temp_note.md"` (add `--path` if user specified one).
     - **MUST READ OUTPUT**: The script will print the saved path. Use this information in your final response.
     - Cleanup: `DeleteFile` "temp_note.md".
+- **SSH / Remote Environment Warning**:
+    - **If you are connected via SSH**: The script runs on the REMOTE machine. It CANNOT access your local machine's file system (e.g., `D:\` drive on Windows).
+    - **Action**: If the script fails due to "Remote Environment" or "Path not found" (indicating SSH usage), you MUST inform the user:
+        > "检测到当前处于 SSH 远程连接环境，无法直接保存到本地路径。请手动复制以下 Markdown 内容保存到您的本地笔记软件中："
+    - Then output the full markdown content in a code block for the user to copy.
 - **Troubleshooting**:
     - If the script fails to save to the default path (e.g. permission error), it will try to fallback to `./notes`. Check the output log!
     - If you see `UnicodeEncodeError`, the script has been updated to handle this, but ensure you are passing valid UTF-8 content.

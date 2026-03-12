@@ -96,6 +96,14 @@ python ".\note-taker\scripts\save_note.py" --content "# hello\n\n测试" --proje
 
 脚本已将 stdout/stderr 强制设置为 UTF-8。若你仍遇到乱码，建议在 PowerShell 里使用 UTF-8 编码输出环境，并确保你传入的内容是 UTF-8。
 
+### 3) SSH 远程环境下的保存问题
+
+**注意**：当你通过 Trae SSH 远程连接到服务器（如 Linux/Mac）时，Skill 运行在**远程机器**上。
+
+- **行为**：脚本会自动检测环境。如果不是 Windows 物理机环境，它将无法访问本地的 `D:\` 盘。
+- **回退**：在这种情况下，笔记会默认保存到远程项目的 `./notes` 目录下。
+- **建议**：Agent 会在对话中检测到此情况并提示你手动复制内容，以确保笔记最终能回到你的本地 Obsidian 中。
+
 ## 版本与发布
 
 如需打包分发，可以把 `note-taker/` 作为一个独立目录发布，或通过压缩包进行分发。
