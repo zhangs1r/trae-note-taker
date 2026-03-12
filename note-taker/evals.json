@@ -1,0 +1,23 @@
+{
+  "skill_name": "note-taker",
+  "evals": [
+    {
+      "id": "basic-note",
+      "prompt": "把这段对话记下来",
+      "expected_output": "Should create a markdown file in D:\\desktop\\学习\\obsidian\\Note\\项目\\<ProjectName> with summary of conversation.",
+      "files": []
+    },
+    {
+      "id": "custom-path",
+      "prompt": "把这段记到 D:\\MyNotes\\TestProject 下",
+      "expected_output": "Should create a markdown file in D:\\MyNotes\\TestProject.",
+      "files": []
+    },
+    {
+      "id": "first-time-project",
+      "prompt": "这是第一次在这个项目记笔记，帮我整理一下",
+      "expected_output": "Should create the project directory in default path if it doesn't exist.",
+      "files": []
+    }
+  ]
+}

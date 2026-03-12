@@ -1,0 +1,8 @@
+notes/
+**/notes/
+temp_note.md
+**/temp_note.md
+__pycache__/
+**/__pycache__/
+*.pyc
+.DS_Store
